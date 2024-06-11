@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox #LIBRERIA DE LAS VENTANAS EMERGENTES
+from tkinter import filedialog
 
 root = Tk()
 #VENTANAS EMERGENTES
@@ -31,8 +32,13 @@ def cerrarDoc ():
     else:
         root.destroy()
     
+#BUSCAR FICHEROS
+def abreFichero():
+    fichero = filedialog.askopenfilename(title="Guardar como", initialdir="F:", filetypes=(("Ficheros de Python", "*py"),("Ficheros de texto", "*txt"), ("Todos los ficheros", "*.*"))) #INDICAMOS ELTIPO DE FICHEROS QUE QUIERES QUE ABRA
     
-        
+    print(fichero)        
+
+
         
 
 #GUARDAMOS EN UNA VARIABLE LA CLASE MENU Y LE INDICAMOS DONDE VA A ESTAR
@@ -48,7 +54,7 @@ archivoMenu.add_command(label="Nueva Carpeta")
 #AGREGAMSO SEPARADOR
 archivoMenu.add_separator()
 archivoMenu.add_command(label="Guardar")
-archivoMenu.add_command(label="Guardar Como")
+archivoMenu.add_command(label="Guardar Como", command=abreFichero)
 archivoMenu.add_separator()
 archivoMenu.add_command(label="Cerrar", command=cerrarDoc)
 archivoMenu.add_command(label="Salir", command=funSalir)

@@ -6,7 +6,7 @@ raiz = Tk()
 # Configurar la ventana principal
 raiz.title("Ventana de Pruebas")
 raiz.resizable(1, 1)  # (HEIGHT, WIDTH) 1 = Sí, 0 = No
-#raiz.iconbitmap("bobomb.ico")
+raiz.iconbitmap("bobomb.ico")
 
 #raiz.geometry("650x350") #TAMAÑO VENTANA
 
